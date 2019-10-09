@@ -1,0 +1,49 @@
+<div style="background: #eaeaea;">
+    <div style="padding-bottom:10px;">
+        <img class="article-image" ng-src="https://dreamtour.co/asset/images/slider/{{package.photo}}" border="0" alt="">
+        <div style="height:72px; background-color:#1f2f62; text-align: center;">
+            <p style="font-size: xx-large; font-weight: 100; font-family: roboto;
+        color: white;
+        vertical-align: bottom;
+        line-height: 85px;">Itinerary</p>
+        </div>
+    </div>
+    <div class="mdl-grid portfolio-max-width">
+        <!-- <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp" style="border-radius: 6px; background-color: #1f2f62;" ng-repeat="jalan in perjalanan">
+            <div class="mdl-card__media">
+                <img class="article-image" ng-src="https://dreamtour.co/asset/images/slider/{{jalan.image}}" border="0" alt="">
+            </div>
+            <div class="mdl-grid portfolio-copy" style="margin: 0;">
+                <table style="width:100%">
+                  <tr>
+                    <td><p class="pull-left" style="margin-bottom: 0; font-size: larger;
+                        font-weight: 100;
+                        font-family: roboto;
+                        color: white;">{{ jalan.title }}</p></td>
+                    <td align="right">
+                        <p class="pull-right" style="margin-bottom: 0;font-size: larger;
+                        font-weight: 500;
+                        font-family: roboto;
+                        color: white;">{{ jalan.description }}</p></td>
+                  </tr>
+                </table>
+            </div>
+        </div> -->
+        <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp" style="border-radius: 6px; margin-bottom: 60px;">
+            <div class="mdl-grid portfolio-copy">
+
+                <div class="mdl-cell mdl-cell--8-col mdl-card__supporting-text no-padding " ng-bind-html="package.perjalanan | html"></div>
+                <h6>Rincian</h6>
+                <div class="mdl-cell mdl-cell--8-col mdl-card__supporting-text no-padding " ng-bind-html="package.detail | html"></div>
+                <h6>Termasuk</h6>
+                <div class="mdl-cell mdl-cell--8-col mdl-card__supporting-text no-padding " ng-bind-html="package.termasuk | html"></div>
+                <h6>Tidak Termasuk</h6>
+                <div class="mdl-cell mdl-cell--8-col mdl-card__supporting-text no-padding " ng-bind-html="package.tdktermasuk | html"></div>
+                <h6>Persyaratan</h6>
+                <div class="mdl-cell mdl-cell--8-col mdl-card__supporting-text no-padding " ng-bind-html="package.persyaratan | html"></div>
+                <h6>Info Lanjutan</h6>
+                <div class="mdl-cell mdl-cell--8-col mdl-card__supporting-text no-padding " ng-bind-html="package.informasi_lanjut | html"></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" />
+    <title>Responsive CSS Chat</title>
+
+
+
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript">
+      function getSearchParameters() {
+      var prmstr = window.location.search.substr(1);
+      return prmstr != null && prmstr != "" ? transformToAssocArray(prmstr) : {};
+      }
+
+      function transformToAssocArray( prmstr ) {
+          var params = {};
+          var prmarr = prmstr.split("&");
+          for ( var i = 0; i < prmarr.length; i++) {
+              var tmparr = prmarr[i].split("=");
+              params[tmparr[0]] = tmparr[1];
+          }
+          return params;
+      }
+
+      var parameter = getSearchParameters();
+
+      console.log(parameter.id);
+    </script>
+
+
+     <!-- Angular JS -->
+    <script src="js/angular.min.js"></script>
+    <!-- Angular Route Module -->
+    <script src="js/angular-route.js"></script>
+    <!-- Loading Bar -->
+    <script src="js/loading-bar.js"></script>
+    <link href="js/loading-bar.css" rel='stylesheet' />
+
+     <!-- App JS -->
+
+    <script src="angular/ng-modules/angular-ui-router/build/angular-ui-router.js"></script>
+    <script src="angular/ng-modules/satellizer/satellizer.js"></script>
+    <script src="js/app.js"></script>
+
+    <!-- Regular Packages Controller -->
+    <script src="angular/controller/messageController.js"></script>
+
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <style type="text/css">
+      #chatBox {
+        position:absolute;
+          overflow : auto;
+      }
+    </style>
+
+  </head>
+
+  <body ng-app="dreamtour" ng-controller="MessageController">
+
+    <!-- <div class="menu">
+            <div class="back"><a href="index.html"><i class="fa fa-chevron-left"></i></a> </div>
+            <div class="name">Customer Service</div>
+    </div> -->
+    <div class="menu-bar-2" style="position:absolute;">
+        <table style="margin-top: 30px; width: 100%;">
+            <tr>
+                <td style="padding: 13px; padding-right: 2px;">
+                    <a href="index.html">
+                        <i class="fa fa-angle-left fa-lg" aria-hidden="true" style="color:white;"></i>
+                    </a>
+                </td>
+                <td style="color:white; font-family: 'Roboto','Helvetica','Arial',sans-serif;">
+                    Home
+                </td>
+                <td>
+                    <img class="logo-dreamtour-menu pull-right" src="img/LOGO_DREAM.PNG">
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div  id="chatBox" schroll-bottom="init" style="width: 97%;">
+      <ol class="chat">
+      <!-- <li class="self">
+
+        <div class="msg" >
+          <user>{{ user_id }}</user>
+          <p>{{ cs_group_id }}</p>
+          <time>{{ gcm_id }}</time>
+        </div>
+      </li> -->
+      <!-- <input type="text" ng-model="cs_group_id">
+      <input type="text" ng-model="gcm_id"> -->
+      <li ng-repeat="chat in chats" ng-class="{self: chat.user== 'USER', other: chat.user == 'ADMIN'}">
+
+        <div class="msg" >
+          <user>{{ chat.name }}</user>
+          <p>{{ chat.message }}</p>
+          <time>{{ chat.created_at }}</time>
+        </div>
+      </li>
+
+
+      </ol>
+    </div>
+    <div class="write">
+        <input type="text" ng-model="message">
+        <a ng-click="push(message)" class="write-link send"></a>
+    </div>
+<!--     <div>
+    <a class="submit" value="send">send</a>
+    <input class="textarea" type="text" placeholder="Type here!"/>
+    </div> -->
+
+
+  <script type="text/javascript">
+    // var objDiv = document.getElementById("divChat");
+    // objDiv.scrollTop = objDiv.scrollHeight;
+
+
+    // function jumpToPageBottom() {
+    //   $('html, body').scrollTop( $(document).height()-$(window).height());
+
+    // }
+
+    // jumpToPageBottom();
+  </script>
+
+  </body>
+</html>

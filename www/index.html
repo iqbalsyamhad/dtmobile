@@ -1,0 +1,401 @@
+<!doctype html>
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A portfolio template that uses Material Design Lite.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" />
+    <title>Dream Tour</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="css/material.grey-pink.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jssor.slider.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        jssor_1_slider_init = function() {
+
+            var jssor_1_SlideshowTransitions = [
+              {$Duration:1200,x:-0.3,$During:{$Left:[0.3,0.7]},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:1200,x:0.3,$SlideOut:true,$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2}
+            ];
+
+            var jssor_1_options = {
+              $AutoPlay: 1,
+              $SlideshowOptions: {
+                $Class: $JssorSlideshowRunner$,
+                $Transitions: jssor_1_SlideshowTransitions,
+                $TransitionsOrder: 1
+              },
+              $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+              },
+              $ThumbnailNavigatorOptions: {
+                $Class: $JssorThumbnailNavigator$,
+                $Orientation: 2,
+                $NoDrag: true
+              }
+            };
+
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+            /*#region responsive code begin*/
+
+            var MAX_WIDTH = 980;
+
+            function ScaleSlider() {
+                var containerElement = jssor_1_slider.$Elmt.parentNode;
+                var containerWidth = containerElement.clientWidth;
+
+                if (containerWidth) {
+
+                    var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+
+                    jssor_1_slider.$ScaleWidth(expectedWidth);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+
+            ScaleSlider();
+
+            $Jssor$.$AddEvent(window, "load", ScaleSlider);
+            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+            /*#endregion responsive code end*/
+        };
+    </script>
+    <style>
+        /* jssor slider loading skin spin css */
+        .jssorl-009-spin img {
+            animation-name: jssorl-009-spin;
+            animation-duration: 1.6s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        @keyframes jssorl-009-spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        .jssora061 {display:block;position:absolute;cursor:pointer;}
+        .jssora061 .a {fill:none;stroke:#fff;stroke-width:360;stroke-linecap:round;}
+        .jssora061:hover {opacity:.8;}
+        .jssora061.jssora061dn {opacity:.5;}
+        .jssora061.jssora061ds {opacity:.3;pointer-events:none;}
+
+        div.horiscroll {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Angular JS -->
+    <script src="js/angular.min.js"></script>
+    <!-- Angular Route Module -->
+    <script src="js/angular-route.js"></script>
+    <!-- Loading Bar -->
+    <script src="js/loading-bar.js"></script>
+    <link href="js/loading-bar.css" rel='stylesheet' />
+
+     <!-- App JS
+    <script src="angular/ng-modules/angular-ui-router/build/angular-ui-router.js"></script>
+    <script src="angular/ng-modules/satellizer/satellizer.js"></script>
+    <script src="js/app.js"></script> -->
+    <!-- Regular Packages Controller
+    <script src="angular/controller/authController.js"></script> -->
+
+    <!-- Regular Packages Controller
+    <script src="angular/controller/sliderController.js"></script> -->
+
+    <script type="text/javascript">
+        var gcm = "aswin";
+    </script>
+</head>
+
+<body ng-app="dreamtour">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" style="-webkit-transform: translateZ(0);">
+        <!-- <header class="mdl-layout__header mdl-layout__header--waterfall portfolio-header" style="position: absolute;
+    overflow-y: hidden;">
+            <div class="mdl-layout__header-row portfolio-logo-row">
+                <span class="mdl-layout__title">
+                    <div class="portfolio-logo"></div>
+                    <span id="gcm_id" class="mdl-layout__title">Mobile Apps</span>
+                    <p id="gcm_id"></p>
+                </span>
+            </div>
+        </header> -->
+        <!-- <div class="mdl-layout__drawer mdl-layout--small-screen-only">
+            <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+                <a class="mdl-navigation__link is-active" href="index.html">Home</a>
+                <a class="mdl-navigation__link" href="pilihpaket.html">Umroh Packages</a>
+                <a class="mdl-navigation__link" href="login.html">Login</a>
+            </nav>
+        </div> -->
+        <!-- main index -->
+        <input id="gcm_id" ng-model="gcm_id" type="hidden" name="gcm_id">
+        <!-- <a href="#" class="back-button"><i class="back-button-i fa fa-1x fa-chevron-left"></i></a> -->
+        <div class="menu-bar" ng-show="user_id != null || skiped == true">
+            <img class="logo-dreamtour1" src="img/LOGO_DREAM.PNG">
+        </div>
+
+        <main ng-show="user_id != null || skiped == true" class="mdl-layout__content">
+
+            <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:520px;overflow:hidden;visibility:hidden;">
+                <!-- Loading Screen -->
+                <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
+                    <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/loading.gif" />
+                </div>
+                <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:520px;overflow:hidden;">
+                    <div>
+                        <a href="pilihpaket.html"><img data-u="image" src="https://dreamtour.co/mobile/1.jpg" /></a>
+                    </div>
+                    <div>
+                        <a href="pilihpaket.html"><img data-u="image" src="https://dreamtour.co/mobile/2.jpg" /></a>
+                    </div>
+                    <div>
+                        <a href="pilihpaket.html"><img data-u="image" src="https://dreamtour.co/mobile/3.jpg" /></a>
+                    </div>
+                    <div>
+                        <a href="pilihpaket.html"><img data-u="image" src="https://dreamtour.co/mobile/4.jpg" /></a>
+                    </div>
+                    <div>
+                        <a href="pilihpaket.html"><img data-u="image" src="https://dreamtour.co/mobile/5.jpg" /></a>
+                    </div>
+                    <div>
+                        <a href="pilihpaket.html"><img data-u="image" src="https://dreamtour.co/mobile/6.jpg" /></a>
+                    </div>
+                    <div>
+                        <a href="pilihpaket.html"><img data-u="image" src="https://dreamtour.co/mobile/7.jpg" /></a>
+                    </div>
+                    <div>
+                        <a href="pilihpaket.html"><img data-u="image" src="https://dreamtour.co/mobile/8.jpg" /></a>
+                    </div>
+                    <div>
+                        <a href="pilihpaket.html"><img data-u="image" src="https://dreamtour.co/mobile/9.jpg" /></a>
+                    </div>
+                    <div>
+                        <a href="pilihpaket.html"><img data-u="image" src="https://dreamtour.co/mobile/10.jpg" /></a>
+                    </div>
+                </div>
+                <!-- Arrow Navigator -->
+                <div data-u="arrowleft" class="jssora061" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+                    <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                        <path class="a" d="M11949,1919L5964.9,7771.7c-127.9,125.5-127.9,329.1,0,454.9L11949,14079"></path>
+                    </svg>
+                </div>
+                <div data-u="arrowright" class="jssora061" style="width:55px;height:55px;top:0px;right:25px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+                    <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                        <path class="a" d="M5869,1919l5984.1,5852.7c127.9,125.5,127.9,329.1,0,454.9L5869,14079"></path>
+                    </svg>
+                </div>
+            </div>
+
+            <h5 style="color: #ffffff; margin-left: 15px;">Paket Dreamtour <i class="fa fa-tag"></i></h5>
+            <hr style="color: #ffffff;">
+
+            <div class="mdl-grid portfolio-max-width horiscroll">
+
+                <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp" style="flex: 0 0 auto; max-width: 280px;">
+                    <a href="paketExclusive.html" style="text-decoration : none;">
+                        <div class="mdl-card__media">
+                            <img class="article-image" src="img/exclusive.jpg" border="0" alt="">
+                        </div>
+
+                        <div class="mdl-card__supporting-text">
+                            Paket Umroh Exclusive
+                        </div>
+                    </a>
+                </div>
+
+                <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp" style="flex: 0 0 auto; max-width: 280px;">
+                    <a href="paketRegular.html" style="text-decoration : none;">
+                        <div class="mdl-card__media">
+                            <img class="article-image" src="img/exclusive_plus.jpg" border="0" alt="">
+                        </div>
+
+                        <div class="mdl-card__supporting-text">
+                            Paket Umroh Plus
+                        </div>
+                    </a>
+                </div>
+
+                <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp" style="flex: 0 0 auto; max-width: 280px;">
+                    <a href="paketHoliday.html" style="text-decoration : none;">
+                        <div class="mdl-card__media">
+                            <img class="article-image" src="img/holiday.jpg" border="0" alt="">
+                        </div>
+
+                        <div class="mdl-card__supporting-text">
+                            Paket Liburan
+                        </div>
+                    </a>
+                </div>
+              
+                <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp" style="flex: 0 0 auto; max-width: 280px;">
+                    <a href="#" style="text-decoration : none;" onclick="window.open('https://dreamtour.co/jadwalpemberangkatan', '_system');">
+                        <div class="mdl-card__media">
+                            <img class="article-image" src="https://dreamtour.co/mobile/jadwalbiaya.jpg" border="0" alt="">
+                        </div>
+
+                        <div class="mdl-card__supporting-text">
+                            Jadwal dan Biaya
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <h5 style="color: #ffffff; margin-left: 15px;">Dreamtour Support <i class="fa fa-info-circle"></i></h5>
+            <hr style="color: #ffffff;">
+
+            <div class="mdl-grid" style="padding-top: 15px;">
+                <!-- <div class="logo-box">
+                    <img class="logo-dreamtour" src="img/dream.png">
+                </div> -->
+                <!--<div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-phone" style="text-align:center;">
+                    <a href="pilihpaket.html" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" style="box-shadow : none; width:100px; height:100px; margin-bottom: 5px;">
+                      <img src="img/paket.jpg" style="width:100%; height:100%;">
+                    </a>
+                    <p style="color:white;">Umrah Package</p>
+                </div>-->
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-phone" style="text-align:center;"><!-- FAB button with ripple -->
+                    <a href="list-doa.html" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" style="box-shadow : none; width:100px; height:100px; margin-bottom: 5px;">
+                      <img src="img/doa.png" style="width:100%; height:100%;">
+                    </a>
+                    <p style="color:white;">Tips & Doa</p>
+                </div>
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-phone" style="text-align:center;"><!-- FAB button with ripple -->
+                    <a href="newsletter.html" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" style="box-shadow : none; width:100px; height:100px; margin-bottom: 5px;">
+                      <img src="img/newsletter.jpg" style="width:100%; height:100%;">
+                    </a>
+                    <p style="color:white;">Newsletter</p>
+                </div>
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-phone" style="text-align:center;"><!-- FAB button with ripple -->
+                    <a href="chatroom.html"  class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" style="box-shadow : none; width:100px; height:100px; margin-bottom: 5px;">
+                      <img src="img/group-chat.png" style="width:100%; height:100%;">
+                    </a>
+                    <p style="color:white;">Group Chat</p>
+                </div>
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-phone" style="text-align:center;"><!-- FAB button with ripple -->
+                    <a href="message.html" onclick="location.href=this.href+'?gcm='+gcm;return false;" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" style="box-shadow : none; width:100px; height:100px; margin-bottom: 5px;">
+                      <img src="img/message.png" style="width:100%; height:100%;">
+                    </a>
+                    <p style="color:white;">Customer Service</p>
+                </div>
+
+
+                <!--<div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-phone" style="text-align:center;">
+                    <a href="feedback.html" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" style="box-shadow : none; width:100px; height:100px; margin-bottom: 5px;">
+                      <img src="img/feedback.png" style="width:100%; height:100%;">
+                    </a>
+                    <p style="color:white;">Feedback</p>
+                </div>-->
+
+
+            </div>
+
+        </main>
+
+        <!-- login
+        <main ng-show="user_id == null && skiped == false"class="mdl-layout__content">
+            <div class="mdl-grid portfolio-max-width portfolio-contact">
+                <div class="logo-box">
+                    <img class="logo-dreamtour" src="img/dream.png">
+                </div>
+                <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text" style="text-align : center;">Login</h2>
+                    </div>
+
+                    <div class="mdl-card__supporting-text">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input ng-model="data.email" class="mdl-textfield__input" type="text" id="Email">
+                            <label class="mdl-textfield__label" for="Email">Username</label>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input ng-model="data.password" class="mdl-textfield__input" type="password" id="Password">
+                            <label class="mdl-textfield__label" for="Password">Password</label>
+                            <span class="mdl-textfield__error">Password</span>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="padding-top:0; padding-bottom:0;">
+                            <p style="font-weight: bolder;">
+                                 {{ message }}
+                            </p>
+                            <img src="img/ring.svg" ng-show="waited" style="width:36px; height:36px; margin-left: 42%; padding-bottom:10px; margin-top:-20px;">
+                        </div>
+                        <p>
+                            <button ng-click="login()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"  style="text-align : right;"">
+                                Login
+                            </button>
+                            <button ng-click="skip()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"  style="text-align : right;"">
+                                Skip
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </main> -->
+    </div>
+
+    <style type="text/css">
+       a {
+            color: rgb(39, 30, 125);
+        }
+
+        .mdl-card__media {
+            background-color: rgb(39, 30, 125);
+        }
+
+        .mdl-button--accent.mdl-button--accent {
+            color: rgb(39, 30, 125);
+        }
+
+        .mdl-button--accent.mdl-button--accent.mdl-button--raised, .mdl-button--accent.mdl-button--accent.mdl-button--fab {
+            background-color: rgb(39, 30, 125);
+        }
+    </style>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script src="js/material.min.js"></script>
+    <script type="text/javascript">
+        document.addEventListener("deviceready",onDeviceReady,false);
+        function onDeviceReady()
+        {
+            //
+        }
+    </script>
+    <script type="text/javascript">jssor_1_slider_init();</script>
+    <!-- initialize -->
+</body>
+
+</html>
