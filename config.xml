@@ -5,7 +5,6 @@
     <author email="iqbaluddin@dreamtour.co.id" href="https://dreamtour.co">Dream Tour IT</author>
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
-    <preference name="phonegap-version" value="cli-9.0.0" />
     <preference name="android-minSdkVersion" value="19" />            
     <preference name="android-targetSdkVersion" value="28" />
     <plugin name="cordova-plugin-console" source="npm" spec="~1.0.2" />
