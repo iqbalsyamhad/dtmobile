@@ -172,5 +172,4 @@
     <engine name="ios" spec="~4.1.1" />
     <preference name="android-build-tool" value="gradle" />
     <preference name="StatusBarBackgroundColor" value="#233277" />
-    <preference name="StatusBarStyle" value="lightcontent" />
 </widget>
