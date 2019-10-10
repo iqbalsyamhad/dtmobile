@@ -25,16 +25,10 @@
         "cordova-plugin-device-motion": {
             "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
         },
-        "cordova-plugin-device-orientation": {
-            "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
-        },
         "cordova-plugin-dialogs": {
             "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
         },
         "cordova-plugin-file-transfer": {
-            "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
-        },
-        "cordova-plugin-geolocation": {
             "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
         },
         "cordova-plugin-globalization": {
@@ -43,16 +37,7 @@
         "cordova-plugin-inappbrowser": {
             "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
         },
-        "cordova-plugin-media": {
-            "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
-        },
-        "cordova-plugin-media-capture": {
-            "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
-        },
         "cordova-plugin-network-information": {
-            "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
-        },
-        "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
         },
         "cordova-plugin-statusbar": {
@@ -62,13 +47,6 @@
             "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
-        },
-        "phonegap-plugin-push": {
-            "SENDER_ID": "202371380195",
-            "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
-        },
-        "de.appplant.cordova.plugin.local-notification": {
             "PACKAGE_NAME": "com.dreamtour.mobiledreamtour"
         }
     },
