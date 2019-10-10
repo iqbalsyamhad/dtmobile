@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.dreamtour.mobile" version="1.7" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.dreamtour.mobiledreamtour" version="1.7" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Mobile Dreamtour</name>
     <description>Mobile Dreamtour</description>
     <author email="iqbaluddin@dreamtour.co.id" href="https://dreamtour.co">Dream Tour IT</author>
