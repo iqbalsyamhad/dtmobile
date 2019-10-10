@@ -43,8 +43,9 @@ dreamtour.controller('mUmrahController', ['$scope', '$http','cfpLoadingBar',
                     {name : "Doa di bukit Marwah selesai Sa'i", images : ['image/DOADOA KETIKA UMRAH/Doa Ketika Sai/Doa dibukit marwah selesai sai/doasaimarwahselesai.jpg']},
                     
                     {name : "Doa ketika Tahallul", images : ['image/DOADOA KETIKA UMRAH/Doa ketika Tahallul/DoaketikaTahallul.jpg']},
-                    {name : "Doa Thawaf Wada", images : ['image/DOADOA KETIKA UMRAH/Doa Thawaf Wada/DoaThawafWada.jpg']},
                 ];
+
+    $scope.thawafwadas = [{name : "Doa Thawaf Wada", images : ['image/DOADOA KETIKA UMRAH/Doa Thawaf Wada/DoaThawafWada.jpg']}];
     
     $scope.doa = parseInt(parameter.id);
 }]);
